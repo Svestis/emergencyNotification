@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+    defaultConfig {
+        applicationId "com.pyrasfaleiavaris.emergencynotification"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "API_ID", "\"" + localProperties['apiId'] + "\"")
+        buildConfigField("String", "API_AUTH", "\"" + localProperties['apiAuth'] + "\"")
+        buildConfigField("String", "API_FLOW", "\"" + localProperties['apiFlow'] + "\"")
+        buildConfigField("String", "API_TO", "\"" + localProperties['apiTo'] + "\"")
+        buildConfigField("String", "API_FROM", "\"" + localProperties['apiFrom'] + "\"")
+        buildConfigField("String", "CALL", "\"" + localProperties['call'] + "\"")
+        buildConfigField("String", "SMS", "\"" + localProperties['sms'] + "\"")
+        buildConfigField("String", "SMS_CALL", "\"" + localProperties['sms_call'] + "\"")
+        buildConfigField("String", "SMS_SMS", "\"" + localProperties['sms_sms'] + "\"")
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "API_ID", "\"" + localProperties['apiId'] + "\"")
+            buildConfigField("String", "API_AUTH", "\"" + localProperties['apiAuth'] + "\"")
+            buildConfigField("String", "API_FLOW", "\"" + localProperties['apiFlow'] + "\"")
+            buildConfigField("String", "API_TO", "\"" + localProperties['apiTo'] + "\"")
+            buildConfigField("String", "API_FROM", "\"" + localProperties['apiFrom'] + "\"")
+            buildConfigField("String", "CALL", "\"" + localProperties['call'] + "\"")
+            buildConfigField("String", "SMS", "\"" + localProperties['sms'] + "\"")
+            buildConfigField("String", "SMS_CALL", "\"" + localProperties['sms_call'] + "\"")
+            buildConfigField("String", "SMS_SMS", "\"" + localProperties['sms_sms'] + "\"")
+        }
+        debug {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "API_ID", "\"" + localProperties['apiId'] + "\"")
+            buildConfigField("String", "API_AUTH", "\"" + localProperties['apiAuth'] + "\"")
+            buildConfigField("String", "API_FLOW", "\"" + localProperties['apiFlow'] + "\"")
+            buildConfigField("String", "API_TO", "\"" + localProperties['apiTo'] + "\"")
+            buildConfigField("String", "API_FROM", "\"" + localProperties['apiFrom'] + "\"")
+            buildConfigField("String", "CALL", "\"" + localProperties['call'] + "\"")
+            buildConfigField("String", "SMS", "\"" + localProperties['sms'] + "\"")
+            buildConfigField("String", "SMS_CALL", "\"" + localProperties['sms_call'] + "\"")
+            buildConfigField("String", "SMS_SMS", "\"" + localProperties['sms_sms'] + "\"")
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pyrasfaleia Varis</string>
+    <string name="emergency_SMS">Emergency SMS - DIRECT</string>
+    <string name="emergency_sms_twilio_sms">Emergency SMS - TWILIO\nDIRECT</string>
+    <string name="emergency_sms_twilio_sms_call">Emergency CALL - TWILIO\nDIRECT</string>
+    <string name="emergency_call_twilio_api">EMERGENCY CALL - TWILIO\nWEB</string>
+    <string name="emergency_sms_twilio_api">EMERGENCY SMS - TWILIO\nWEB</string>
+    <string name="message">ΠΥΡΑΣΦΑΛΕΙΑ ΒΑΡΗΣ\nΕΠΕΙΓΟΝ\nΜΕΤΑΒΕΙΤΕ ΑΜΕΣΑ ΣΤΟΝ ΣΤΑΘΜΟ\n\n
+        PYRASFALEIA VARIS\nEMERGENCY\nPLEASE PROCEED TO THE STATION IMMEDIATELY</string>
+</resources>
